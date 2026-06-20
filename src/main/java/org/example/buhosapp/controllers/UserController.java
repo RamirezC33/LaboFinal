@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/user")
@@ -27,6 +28,15 @@ public class UserController {
                 "User created successfully",
                 HttpStatus.CREATED,
                 userService.createUser(createUserRequest, roleName)
+        );
+    }
+
+    @GetMapping("/get/{id}")
+    public ResponseEntity<GeneralResponse> getUser(@PathVariable UUID id) {
+        return buildResponse(
+                "User found successfully",
+                HttpStatus.OK,
+                userService.getUserById(id)
         );
     }
 
