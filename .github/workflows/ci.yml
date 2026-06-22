@@ -45,7 +45,7 @@ jobs:
           DATABASE_USERNAME=ci_user
           DATABASE_PASSWORD=ci_password
           SPRING_JPA_SHOW_SQL=false
-          SPRING_JPA_HIBERNATE_DDL=validate
+          SPRING_JPA_HIBERNATE_DDL=update
           SPRING_JPA_HIBERNATE_DIALECT=org.hibernate.dialect.PostgreSQLDialect
           END
 
